@@ -1,14 +1,16 @@
-import React from "react"
+import React from "react";
+import Player from "./Player";
+import './Players.css'
 
-function Players() {
-
+const Players = (props) => {
+    // console.log(props)
     return(
-        <div className="card">
-            <h2>Player Name:</h2>
-            <h3>Character Name:</h3>
-            <h3>Skill Level:</h3>
+        <div id="players">
+            {props.players.map(item=>(
+                <Player  player={item} key={item.players_id} category={item}/>
+            ))}
         </div>
     )
 }
 
-export default Players
+export default Players;
